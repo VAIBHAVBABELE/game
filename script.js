@@ -4,6 +4,7 @@ let chBtn = document.querySelector(".chBtn");
 let msgCont = document.querySelector(".msg-container");
 
 let first="X";
+let turn="X";
 
 let countX=0;
 let countO=0;
@@ -11,9 +12,11 @@ let countO=0;
 chBtn.addEventListener("click",()=>{
     if (first==="X"){
         first="O";
+        turn="O";
         alert(`NOW PLAYER 1: ${first}`);
     }else{
         first="X";
+        turn="X";
         alert(`NOW PLAYER 1: ${first}`);
     }
 });
@@ -28,6 +31,7 @@ reset.addEventListener("click",()=>{
         box.disabled=false;
         chBtn.disabled=false;
         msgCont.classList.add("hide");
+        first=turn;
         
     });
 
@@ -60,11 +64,11 @@ boxes.forEach((box)=>{
 const showWinner=(winner)=>{
     if (winner==="X"){
         countX++;
-        msgCont.innerText=`Congratulation ${winner} is winner and wins game ${countX} times .`;
+        msgCont.innerText=`Congratulation ${winner} is winner.\nX wins :${countX} times, O wins: ${countO} times.`;
         msgCont.classList.remove("hide");
     }else{
         countO++;
-        msgCont.innerText=`Congratulation ${winner} is winner and wins game ${countO} times .`;
+        msgCont.innerText=`Congratulation ${winner} is winner.\nO wins:${countO} times, X wins: ${countX} times.`;
         msgCont.classList.remove("hide");
     }
 }
