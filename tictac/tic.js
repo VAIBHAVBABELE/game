@@ -1,11 +1,23 @@
+const mode=document.getElementById("mode");
 let boxes = document.querySelectorAll(".box");
 let reset = document.querySelector(".reset");
 let chBtn = document.querySelector(".chBtn");
-let msgCont = document.querySelector(".msg-container");
+let msgCont = document.getElementById("msg")
+
+
+mode.onclick=function(){
+    document.body.classList.toggle("dark-mode");
+    if(document.body.classList.contains("dark-mode")){
+        mode.src="images/sun.png";
+    }else{
+        mode.src="images/moon.png ";
+    }
+}
 
 let first="X";
 let turn="X";
 
+let drawCount=0;
 let countX=0;
 let countO=0;
 
@@ -30,8 +42,13 @@ reset.addEventListener("click",()=>{
         box.innerText="";
         box.disabled=false;
         chBtn.disabled=false;
-        msgCont.classList.add("hide");
+        msgCont.innerText="Play Game";
+        msgCont.style.backgroundColor="rgb(32, 32, 76)";
+        if(document.body.classList.contains("dark-mode")){
+            msgCont.style.backgroundColor="rgb(174, 174, 241)";
+        }
         first=turn;
+        drawCount=0;
         
     });
 
@@ -54,6 +71,7 @@ boxes.forEach((box)=>{
             first="X";
         }
         box.disabled = true;
+        drawCount++;
 
         checkWinner();
         
@@ -61,15 +79,23 @@ boxes.forEach((box)=>{
     
 });
 
+const drawGame=()=>{
+    msgCont.innerText="Game is Draw!";
+    msgCont.style.backgroundColor="rgb(174, 174, 241)";
+}
+
 const showWinner=(winner)=>{
     if (winner==="X"){
         countX++;
+        
         msgCont.innerText=`Congratulation ${winner} is winner.\nX wins :${countX} times, O wins: ${countO} times.`;
-        msgCont.classList.remove("hide");
-    }else{
+        msgCont.style.backgroundColor="green";
+        
+    }else {
         countO++;
         msgCont.innerText=`Congratulation ${winner} is winner.\nO wins:${countO} times, X wins: ${countX} times.`;
-        msgCont.classList.remove("hide");
+        msgCont.style.backgroundColor="red";
+        
     }
 }
 
@@ -77,6 +103,7 @@ const boxDisable =()=>{
     for(let box of boxes){
         box.disabled=true;
     }
+
 }
 
 
@@ -87,13 +114,20 @@ const checkWinner =()=>{
         let pos2=boxes[pattern[1]].innerText;
         let pos3=boxes[pattern[2]].innerText;
 
-        if (pos1!="" && pos2!="" && pos3!=""){
+        if (pos1!="" && pos2!="" && pos3!="" ){
             if(pos1===pos2 && pos2===pos3){
-                showWinner(pos1);
                 boxDisable();
+                showWinner(pos1);
+                return;
+                
             }
+            
         }
         
+        
+    }
+    if (drawCount === 9) {
+        drawGame();
     }
 }
 
