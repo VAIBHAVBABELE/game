@@ -1,0 +1,100 @@
+
+
+.scores-container {
+  margin-top: 10px;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.total-score,
+.time ,.restart {
+  margin: 20px;
+  text-align: center;
+  background: rgb(86, 85, 85); /* Semi-transparent white background */
+  padding: 5px;
+  color: var(--primary-text-color);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle glow effect */
+  border-radius:20px;
+  border: 5px solid var(--primary-text-color);
+}
+
+.restart{
+  cursor: pointer;
+}
+
+.grid-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.grid {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3,0fr);  
+  grid-template-rows: repeat(2,0fr);
+  background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent overlay for grids */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle shadow for a glowing effect */
+  border-radius:20px;
+  border: 5px solid var(--primary-text-color);
+}
+
+.square {
+  height: 90px;
+  width: 90px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent square background */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Adds a glowing effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius:20px;
+  border: 5px solid var(--primary-text-color);
+}
+
+.emoji {
+  background-image: url("/images/alien-image.png");
+  background-position: center;
+  background-size: cover;
+}
+/* Optional: Add a hover effect for interactive elements */
+.total-score:hover,
+.time:hover,
+.square:hover,.restart:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  transition: transform 0.3s ease;
+   /* Brightens the background on hover */
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+  .square {
+    height: 80px; /* Smaller squares for mobile */
+    width: 80px;
+    margin: 5px;
+  }
+
+
+  .grid {
+    padding: 10px; /* Reduce grid padding for smaller screens */
+  }
+  .total-score,
+  .time ,.restart {
+  margin: 10px;
+  padding: 3px;
+  border-radius:10px;
+  
+}
+}
