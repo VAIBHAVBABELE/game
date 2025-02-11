@@ -1,0 +1,204 @@
+
+
+ 
+
+  :root{
+
+    --bullet-color:rgb(251, 248, 248);
+    --background-image:url('../../images/space.gif');
+    --text-color:rgb(74, 73, 73);
+    --tertiary-color:rgb(155, 155, 188);
+    --border-color:blue;
+    --background-menu:#4caf50;
+    --background-gameOver:#f44336;
+    
+    
+}
+
+.dark-mode{
+  --bullet-color:yellow;
+    --background-image:url('../../images/space5.gif');
+    --text-color:rgb(244, 240, 240);
+    --tertiary-color:rgb(174, 174, 241);
+    --background-menu:#0d7e0d;
+    --background-gameOver:#a44933;
+
+
+
+}
+
+
+
+
+footer{
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+footer ul{
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+
+} 
+
+#left{
+  height: 7vh;
+  width: 7vh;
+  rotate: 180deg;
+  margin-right: 100px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+#right{
+  height: 7vh;
+  width: 7vh;
+  border-radius: 50%;
+  background-size: cover;
+}
+  
+  .game-container {
+    position: relative;
+    height: 88vh;
+    background:var(--background-image);
+    background-size:cover;
+    color:var(--text-color);
+    
+  }
+
+  .menu {
+    text-align: center;
+  }
+  
+  .menu h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .menu .btn {
+    margin-top: 100px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: var(--background-menu);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border:var(--text-color) 2px solid;
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
+  
+  #rules {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    justify-self:center;
+  }
+  
+  .game {
+    position: relative;
+    height:80vh;
+  }
+  
+  .player {
+    position:absolute;
+    bottom: 0%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background: url('/images/ship.png') no-repeat center center;
+    background-size: cover;
+    transform: translateX(-50%);
+  }
+
+  .player:hover{
+    cursor: pointer;
+  }
+  
+  .enemy {
+    position: absolute;
+    top: -50px;
+    width: 70px;
+    height: 70px;
+    background: url('/images/ufo.png') no-repeat center center;
+    background-size: cover;
+  }
+  
+  .bullet {
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    background: var(--bullet-color);
+    border-radius: 2px;
+  }
+  
+  #score {
+    position: absolute;
+    font-weight: bold;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+  }
+  
+  #game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  #game-over button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: var(--background-gameOver);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border:var(--text-color) 2px solid;
+  }
+  
+  
+  
+  @media (max-width: 768px) {
+    .menu h1 {
+      font-size: 2rem;
+    }
+  
+    .menu .btn {
+      font-size: 1rem;
+      padding: 8px 15px;
+    }
+  
+    #rules {
+      font-size: 1rem;
+    }
+
+    .player{
+      bottom: 0%;
+    }
+
+    .game {
+      position: relative;
+      height:75vh;
+    }
+
+    
+  }
+  
+
+  

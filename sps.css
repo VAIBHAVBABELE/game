@@ -1,0 +1,151 @@
+
+
+:root{
+    --primary-color:white;
+    --secondary-color:black;
+    --tertiary-color:rgb(32, 32, 76);
+}
+
+.dark-mode{
+    --primary-color:black;
+    --secondary-color:white;
+    --tertiary-color:rgb(174, 174, 241);
+    
+
+}
+
+
+
+.choice{
+    width: 110px;
+    height: 110px;
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 20px;
+    border:var(--secondary-color) 2px solid;
+    
+}
+
+.choice:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    
+    
+}
+.score p{
+    line-height: 3rem;
+    color: var(--secondary-color);
+}
+
+img{
+    width: 145px;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.choices{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+
+#user,#pc{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.msg-container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+#msg{
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    
+}
+
+@media  (max-width:768px) {
+   
+    .choice{
+        width: 80px;
+        height: 80px;
+        padding: 4rem;
+    }
+
+    img{
+        width: 105px;
+        height: 105px;
+    }
+
+    #user,#pc{
+        margin-top: 60px;
+        font-size: 3rem;
+        
+    }
+
+    .msg-container{
+        margin-top: 1.5rem;
+    }
+    
+    #msg{
+        font-size: 1.6rem;
+        padding: 0.5rem;
+        border-radius: 0.8rem;
+        
+    }
+    
+}
+
+@media (max-width:480px) {
+    
+    .choice{
+        width: 60px;
+        height: 60px;
+        padding: 3rem;
+    }
+
+    img{
+        width: 80px;
+        height: 80px;
+    }
+
+    #user,#pc{
+        margin-top: 20px;
+        font-size: 1.8rem;
+        
+    }
+
+    
+    #msg{
+        font-size: 1.4rem;
+        padding: 0.4rem;
+        border-radius: 0.6rem;
+        
+    }
+    
+}
