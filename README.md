@@ -83,3 +83,20 @@ else
 strcpy(stack,"E");
 printf("\n $%s\t\t%s$\t\t\tE->E*E",stack,ip_sym);
 }
+flag=1;
+st_ptr=0;
+}
+if(!strcmp(stack,"E")&&ip_ptr==len)
+{
+printf("\n $%s\t\t%s$\t\t\tACCEPT",stack,ip_sym);
+getch();
+exit(0);
+}
+if(flag==0)
+{
+printf("\n $%s\t\t\t%s\t\t reject",stack,ip_sym);
+getch();
+exit(0);
+}
+return;
+}
