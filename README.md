@@ -39,3 +39,47 @@ check();
 st_ptr++;
 }
 st_ptr++;
+
+
+check();
+}
+void check()
+{
+int flag=0;
+temp2[0]=stack[st_ptr];
+temp2[1]='\0';
+if(islower(temp2[0]))
+{
+stack[st_ptr]='E';
+flag=1;
+}
+if((!strcmp(temp2,"+"))||(!strcmp(temp2,"*"))
+||(!strcmp(temp2,"/"))||(!strcmp(temp2,"-")))
+{
+flag=1;
+}
+if((!strcmp(stack,"E+E"))||(!strcmp(stack,"E/E"))
+||(!strcmp(stack,"E*E"))||(!strcmp(stack,"E-E")))
+{
+if(!strcmp(stack,"E+E"))
+{
+strcpy(stack,"E");
+printf("\n $%s\t\t%s$\t\t\tE->E+E",stack,ip_sym);
+}
+else
+if(!strcmp(stack,"E/E"))
+{
+strcpy(stack,"E");
+printf("\n $%s\t\t %s$\t\t\tE->E/E",stack,ip_sym);
+}
+else
+if(!strcmp(stack,"E-E"))
+{
+strcpy(stack,"E");
+printf("\n $%s\t\t %s$\t\t\tE->E-E",stack,ip_sym);
+}
+else
+{
+strcpy(stack,"E");
+printf("\n $%s\t\t%s$\t\t\tE->E*E",stack,ip_sym);
+}
